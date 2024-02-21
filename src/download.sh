@@ -32,7 +32,7 @@ download() {
     core)
         name=$is_core_name
         tmpfile=$tmpdir/$is_core.zip
-        link="https://github.com/${is_core_repo}/releases/download/${latest_ver}/${is_core}-linux-${is_core_arch}.zip"
+        link="https://download.fastgit.org/${is_core_repo}/releases/download/${latest_ver}/${is_core}-linux-${is_core_arch}.zip"
         download_file
         unzip -qo $tmpfile -d $is_core_dir/bin
         chmod +x $is_core_bin
@@ -40,7 +40,7 @@ download() {
     sh)
         name="$is_core_name 脚本"
         tmpfile=$tmpdir/sh.zip
-        link="https://github.com/${is_sh_repo}/releases/download/${latest_ver}/code.zip"
+        link="https://download.fastgit.org/${is_sh_repo}/releases/download/${latest_ver}/code.zip"
         download_file
         unzip -qo $tmpfile -d $is_sh_dir
         chmod +x $is_sh_bin
@@ -48,8 +48,8 @@ download() {
     caddy)
         name="Caddy"
         tmpfile=$tmpdir/caddy.tar.gz
-        # https://github.com/caddyserver/caddy/releases/download/v2.6.4/caddy_2.6.4_linux_amd64.tar.gz
-        link="https://github.com/${is_caddy_repo}/releases/download/${latest_ver}/caddy_${latest_ver:1}_linux_${caddy_arch}.tar.gz"
+        # https://download.fastgit.org/caddyserver/caddy/releases/download/v2.6.4/caddy_2.6.4_linux_amd64.tar.gz
+        link="https://download.fastgit.org/${is_caddy_repo}/releases/download/${latest_ver}/caddy_${latest_ver:1}_linux_${caddy_arch}.tar.gz"
         download_file
         [[ ! $(type -P tar) ]] && {
             rm -rf $tmpdir
